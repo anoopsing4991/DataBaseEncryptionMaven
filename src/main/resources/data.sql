@@ -1,0 +1,1 @@
+//INSERT INTO CARD_DETAIL (id,name,number, expiry) VALUES (1,'rupay12345678912', '12345678','10/25');
