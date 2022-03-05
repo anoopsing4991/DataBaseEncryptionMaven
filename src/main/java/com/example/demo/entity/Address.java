@@ -4,18 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Address {
-	
-<<<<<<< HEAD
+
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	 private Long id;
-=======
-	 @Id
-	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	 private Long id;
->>>>>>> dev
 
 }
