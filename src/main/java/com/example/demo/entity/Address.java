@@ -8,8 +8,8 @@ import javax.persistence.Id;
 @Entity
 public class Address {
 	
-	@Id
+	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	 private Long id;
 
 }
