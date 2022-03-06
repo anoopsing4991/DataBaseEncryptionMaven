@@ -19,7 +19,7 @@ public class JasyptEncryptorConfig {
 	@Value("${jasypt.encryptor.algorithm}")
 	private String algorithm;
 
-	@Value("${jasypt.encryptor.register.name}")
+	@Value("${jasypt.encryptor.name}")
 	private String encryptorRegisteredName;
 
 	public EnvironmentStringPBEConfig encryptorConfiguration() {

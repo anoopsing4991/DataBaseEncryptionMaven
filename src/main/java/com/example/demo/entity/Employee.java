@@ -5,51 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
-import org.hibernate.annotations.TypeDefs;
-import org.jasypt.hibernate5.type.EncryptedDateAsStringType;
-import org.jasypt.hibernate5.type.EncryptedDoubleAsStringType;
-import org.jasypt.hibernate5.type.EncryptedIntegerAsStringType;
-import org.jasypt.hibernate5.type.EncryptedLongAsStringType;
-import org.jasypt.hibernate5.type.EncryptedStringType;
 
 import lombok.Data;
 
-@TypeDefs({
-    @TypeDef(
-            name="encryptedString",
-            typeClass= EncryptedStringType.class,
-            parameters= {
-                    @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
-            }
-    ),
-    @TypeDef (name="encryptedInteger", typeClass=
-     EncryptedIntegerAsStringType.class, parameters= {
-     
-     @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
-     } ),
-    @TypeDef(
-            name="encryptedLong",
-            typeClass= EncryptedLongAsStringType.class,
-            parameters= {
-                    @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
-            }
-    ),
-    @TypeDef(
-            name="encryptedDouble",
-            typeClass= EncryptedDoubleAsStringType.class,
-            parameters= {
-                    @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
-            }
-    ),
-    @TypeDef (name="encryptedDate", typeClass= EncryptedDateAsStringType.class,
-     parameters= {
-     
-     @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
-     } )
-})
 @Data
 @Entity
 
@@ -63,6 +22,8 @@ public class Employee extends BaseEntity{
 	private Double salary;
 	@Type(type="encryptedLong")
 	private Long code;
+	@Type(type="encryptedString")
+	private String city;
 	/*
 	 * private String createdBy; private String modifiedBy;
 	 * 
