@@ -23,32 +23,32 @@ import lombok.Data;
             name="encryptedString",
             typeClass= EncryptedStringType.class,
             parameters= {
-                    @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
+                    @Parameter(name="encryptorRegisteredName", value="StringEncryptor")
             }
     ),
     @TypeDef (name="encryptedInteger", typeClass=
      EncryptedIntegerAsStringType.class, parameters= {
      
-     @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
+     @Parameter(name="encryptorRegisteredName", value="StringEncryptor")
      } ),
     @TypeDef(
             name="encryptedLong",
             typeClass= EncryptedLongAsStringType.class,
             parameters= {
-                    @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
+                    @Parameter(name="encryptorRegisteredName", value="StringEncryptor")
             }
     ),
     @TypeDef(
             name="encryptedDouble",
             typeClass= EncryptedDoubleAsStringType.class,
             parameters= {
-                    @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
+                    @Parameter(name="encryptorRegisteredName", value="StringEncryptor")
             }
     ),
     @TypeDef (name="encryptedDate", typeClass= EncryptedDateAsStringType.class,
      parameters= {
      
-     @Parameter(name="encryptorRegisteredName", value="myStringEncryptor")
+     @Parameter(name="encryptorRegisteredName", value="StringEncryptor")
      } )
 })
 @Data

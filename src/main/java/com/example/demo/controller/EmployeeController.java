@@ -21,8 +21,8 @@ public class EmployeeController {
 	private EmployeeRepository employeeRepository;
 	
 	@PostMapping("/")
-	public void saveEmployee(@RequestBody Employee employee) {
-		employeeRepository.save(employee);
+	public Employee saveEmployee(@RequestBody Employee employee) {
+		return employeeRepository.save(employee);
 		
 	}
 	
@@ -30,6 +30,7 @@ public class EmployeeController {
 	public void updateEmployee(@RequestBody Employee employee, @PathVariable("id") Long id) {
 		Employee e=employeeRepository.getById(id);
 		e.setCode(employee.getCode());
+		e.setCity(employee.getCity());
 		employeeRepository.save(e);
 		
 	}
@@ -41,8 +42,8 @@ public class EmployeeController {
 	}
 
 	@GetMapping("name/{name}")
-	public List<Employee> getEmployeeByName(@PathVariable("name") Double name) {
-		List<Employee> e=employeeRepository.findBySalary(name);
+	public List<Employee> getEmployeeByName(@PathVariable("name") String name) {
+		List<Employee> e=employeeRepository.findByCreatedBy(name);
 		System.out.println(e.toString());
 		 return e;
 	}
