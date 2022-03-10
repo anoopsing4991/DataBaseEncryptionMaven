@@ -13,38 +13,39 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Employee;
 import com.example.demo.repository.EmployeeRepository;
+import com.example.demo.request.EmployeeRequest;
+import com.example.demo.response.EmployeeResponse;
+import com.example.demo.service.EmployeeService;
 
 @RestController
 @RequestMapping("/api")
 public class EmployeeController {
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
+	@Autowired
+	private EmployeeService employeeService;
 	@PostMapping("/")
-	public Employee saveEmployee(@RequestBody Employee employee) {
-		return employeeRepository.save(employee);
+	public EmployeeResponse saveEmployee(@RequestBody EmployeeRequest request) {
+		return employeeService.addEmployee(request);
 		
 	}
 	
 	@PutMapping("/{id}")
 	public void updateEmployee(@RequestBody Employee employee, @PathVariable("id") Long id) {
 		Employee e=employeeRepository.getById(id);
-		e.setCode(employee.getCode());
-		e.setCity(employee.getCity());
+		e.setName(employee.getName());
 		employeeRepository.save(e);
 		
 	}
 	@GetMapping("/{id}")
 	public Employee getEmployee(@PathVariable("id") Long id) {
 		Employee e=employeeRepository.findById(id).get();
-		System.out.println(e.toString());
 		 return e;
 	}
 
 	@GetMapping("name/{name}")
 	public List<Employee> getEmployeeByName(@PathVariable("name") String name) {
 		List<Employee> e=employeeRepository.findByCreatedBy(name);
-		System.out.println(e.toString());
 		 return e;
 	}
 	

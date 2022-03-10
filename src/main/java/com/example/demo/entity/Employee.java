@@ -14,23 +14,14 @@ import lombok.Data;
 
 public class Employee extends BaseEntity{
 	@Id
-	 @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	@Type(type="encryptedLong")
 	private Long id;
+	
 	@Type(type="encryptedString")
 	private String name;
+	
 	@Type(type="encryptedDouble")
 	private Double salary;
-	@Type(type="encryptedLong")
-	private Long code;
-	@Type(type="encryptedString")
-	private String city;
-	/*
-	 * private String createdBy; private String modifiedBy;
-	 * 
-	 * @Type(type="encryptedDate") private Date createdOn=new Date();
-	 * 
-	 * @Type(type="encryptedDate") private Date modifiedOn=new Date();
-	 * 
-	 * @PreUpdate protected void onUpdate() { modifiedOn = new Date(); }
-	 */
+	
 }
