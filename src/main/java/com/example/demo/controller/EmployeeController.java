@@ -58,7 +58,15 @@ public class EmployeeController {
 			
 		}
 	
-
+@GetMapping("/all1")
+	public List<Employee> getAllEmployee1(){
+			List<Employee> e=null;
+			e=employeeRepository.findAll();
+			e.forEach(System.out::println);
+			return e;
+			
+		}
+	
 	
 
 }
