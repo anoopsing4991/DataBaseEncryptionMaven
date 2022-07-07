@@ -57,13 +57,5 @@ public class EmployeeController {
 			return e;
 			
 		}
-	
-	@GetMapping("name/{name1}")
-	public List<Employee> getEmployeeByName1(@PathVariable("name1") String name) {
-		List<Employee> e=employeeRepository.findByCreatedBy(name);
-		 return e;
-	}
-	
-	
 
 }
